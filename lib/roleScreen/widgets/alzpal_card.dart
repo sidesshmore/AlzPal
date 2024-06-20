@@ -15,31 +15,42 @@ class AlzpalCard extends StatelessWidget {
         color: Color(0xff62CA73),
       ),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           Column(
             children: [
               Image.asset(
                 'assets/oldman.png',
-                height: screenHeight * 0.196,
+                height: screenHeight * 0.210,
                 width: screenWidth * 0.344,
               ),
             ],
           ),
           Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Row(
-                children: [
-                  Text(
-                    'AlzPal',
-                    style: TextStyle(
-                      fontSize: screenWidth * 0.09,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.white,
-                    ),
-                  ),
-                ],
+              SizedBox(
+                height: screenHeight * 0.020,
               ),
+              Container(
+                margin: EdgeInsets.only(right: screenWidth*0.1666),
+                child: Text(
+                  'AlzPal',
+                  style: TextStyle(
+                    fontSize: screenWidth * 0.09,
+                    fontWeight: FontWeight.w600,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.only(left: screenWidth*0.072),
+                width: screenWidth*0.5,
+                child: Text(
+                  'Our cherished companion, navigating life with courage, grace, and resilience.',
+                  style: TextStyle(color: Colors.white,fontSize: screenWidth*0.045),
+                ),
+              )
             ],
           )
         ],

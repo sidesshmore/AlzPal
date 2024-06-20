@@ -15,6 +15,7 @@ class CaregiverCard extends StatelessWidget {
         color: Color(0xff62CA73),
       ),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           Column(
             children: [
@@ -25,21 +26,32 @@ class CaregiverCard extends StatelessWidget {
               ),
             ],
           ),
+          
           Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Row(
-                children: [
-                  Text(
-                    'Caregiver',
-                    style: TextStyle(
-                      fontSize: screenWidth * 0.09,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.white,
-                    ),
-                  ),
-                ],
+              SizedBox(
+                height: screenHeight * 0.020,
               ),
+              Container(
+                margin: EdgeInsets.only(right: screenWidth*0.038),
+                child: Text(
+                  'Caregiver',
+                  style: TextStyle(
+                    fontSize: screenWidth * 0.09,
+                    fontWeight: FontWeight.w600,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.only(left: screenWidth*0.072),
+                width: screenWidth*0.5,
+                child: Text(
+                  'The unsung hero providing unwavering love, support, and care every step of the way.',
+                  style: TextStyle(color: Colors.white,fontSize: screenWidth*0.045),
+                ),
+              )
             ],
           )
         ],
