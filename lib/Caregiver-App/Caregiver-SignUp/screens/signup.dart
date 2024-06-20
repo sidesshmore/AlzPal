@@ -1,3 +1,4 @@
+import 'package:alzpal/Caregiver-App/Caregiver-Home/screens/caregiver_home.dart';
 import 'package:flutter/material.dart';
 
 class CaregiverSignUp extends StatefulWidget {
@@ -48,6 +49,7 @@ class _CaregiverSignUpState extends State<CaregiverSignUp> {
             ),
             SizedBox(
               child: TextField(
+                cursorColor: Colors.white,
                 style: TextStyle(color: Colors.white),
                 controller: _namecontroller,
                 decoration: InputDecoration(
@@ -80,6 +82,7 @@ class _CaregiverSignUpState extends State<CaregiverSignUp> {
             ),
             SizedBox(
               child: TextField(
+                cursorColor: Colors.white,
                 style: TextStyle(color: Colors.white),
                 controller: _emailcontroller,
                 decoration: InputDecoration(
@@ -112,6 +115,7 @@ class _CaregiverSignUpState extends State<CaregiverSignUp> {
             ),
             SizedBox(
               child: TextField(
+                cursorColor: Colors.white,
                 style: TextStyle(color: Colors.white),
                 controller: _passwordcontroller,
                 obscureText: !_passwordVisible,
@@ -147,6 +151,8 @@ class _CaregiverSignUpState extends State<CaregiverSignUp> {
               style: ElevatedButton.styleFrom(),
               onPressed: () {
                 // googleLogin();
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => CaregiverHome()));
               },
               child: Padding(
                 padding: EdgeInsets.fromLTRB(0, 8, 0, 8),
