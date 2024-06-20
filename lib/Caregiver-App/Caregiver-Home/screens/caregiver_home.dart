@@ -62,9 +62,7 @@ class _CaregiverHomeState extends State<CaregiverHome> {
                     )
                   ],
                 ),
-                SizedBox(
-                  width: screenWidth * 0.03,
-                ),
+                Spacer(),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [

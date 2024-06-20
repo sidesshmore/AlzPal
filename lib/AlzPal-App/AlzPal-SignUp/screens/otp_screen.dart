@@ -19,7 +19,7 @@ class _OtpScreenState extends State<OtpScreen> {
         height: screenHeight * 0.6,
         width: screenWidth,
         decoration: BoxDecoration(
-            color: Color(0xff171717), borderRadius: BorderRadius.circular(27)),
+            color: Color(0xff171717), borderRadius: BorderRadius.only(topLeft:Radius.circular(27),topRight: Radius.circular(27))),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [

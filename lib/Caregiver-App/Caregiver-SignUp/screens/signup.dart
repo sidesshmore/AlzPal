@@ -141,6 +141,33 @@ class _CaregiverSignUpState extends State<CaregiverSignUp> {
               ),
             ),
             SizedBox(
+              height: screenHeight * 0.033,
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => CaregiverHome()),
+                );
+              },
+              style: TextButton.styleFrom(
+                minimumSize: Size(screenWidth*0.382, screenHeight*0.063),
+                // padding:
+                //     EdgeInsets.only(left: 20, right: 20, top: 10, bottom: 10),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10)),
+                backgroundColor: Color(0xff62CA73),
+              ),
+              child: Text(
+                'SignUp',
+                style: TextStyle(
+                  fontSize: screenWidth * 0.065,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+            SizedBox(
               height: screenHeight * 0.06,
             ),
             Image.asset('assets/OR-Row.png'),

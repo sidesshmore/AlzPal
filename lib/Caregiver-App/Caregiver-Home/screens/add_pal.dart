@@ -113,7 +113,7 @@ class _AddPalState extends State<AddPal> {
               ],
             ),
             SizedBox(
-              height: screenHeight * 0.005,
+              height: screenHeight * 0.014,
             ),
             InkWell(
               onTap: () {},
