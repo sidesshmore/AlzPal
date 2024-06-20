@@ -14,6 +14,8 @@ class _AddPalState extends State<AddPal> {
     final _namecontroller = TextEditingController();
     final _addresscontroller = TextEditingController();
     final _numbercontroller = TextEditingController();
+    final _emergencyNamecontroller = TextEditingController();
+    final _emergencyNumbercontroller = TextEditingController();
     bool _passwordVisible = true;
     double screenHeight = MediaQuery.of(context).size.height;
     double screenWidth = MediaQuery.of(context).size.width;
@@ -152,6 +154,47 @@ class _AddPalState extends State<AddPal> {
                       )
                     ],
                   )),
+            ),
+            SizedBox(
+              height: screenHeight * 0.033,
+            ),
+            const Divider(
+              thickness: 2,
+              indent: 5,
+              endIndent: 5,
+            ),
+            SizedBox(
+              height: screenHeight * 0.033,
+            ),
+            Row(
+              children: [
+                Text(
+                  'Emergency Contact Name',
+                  style: TextStyle(
+                      fontSize: screenWidth * 0.039, color: Color(0xffA3A3A3)),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: screenHeight * 0.005,
+            ),
+            SizedBox(
+              child: TextField(
+                cursorColor: Colors.white,
+                style: TextStyle(color: Colors.white),
+                controller: _emergencyNamecontroller,
+                decoration: InputDecoration(
+                  focusedBorder: OutlineInputBorder(
+                    borderSide:
+                        const BorderSide(color: Color(0xff62CA73), width: 2.0),
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                  fillColor: Color(0xffA3A3A3),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                ),
+              ),
             ),
             SizedBox(
               height: screenHeight * 0.033,
