@@ -141,7 +141,7 @@ class _CaregiverSignUpState extends State<CaregiverSignUp> {
             ),
             Image.asset('assets/OR-Row.png'),
             SizedBox(
-              height: screenHeight * 0.06,
+              height: screenHeight * 0.059,
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(),
