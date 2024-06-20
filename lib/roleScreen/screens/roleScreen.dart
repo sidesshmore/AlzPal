@@ -14,7 +14,7 @@ class Rolescreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         foregroundColor: Colors.white,
-        toolbarHeight: screenHeight * 0.031,
+        toolbarHeight: screenHeight * 0.050,
         backgroundColor: const Color(0xff262626),
       ),
       body: Column(

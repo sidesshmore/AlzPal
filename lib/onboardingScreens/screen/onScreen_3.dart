@@ -22,7 +22,7 @@ class Onscreen3 extends StatelessWidget {
             width: screenWidth,
           ),
           SizedBox(
-            height: screenHeight * 0.055,
+            height: screenHeight * 0.080,
           ),
           RichText(
             text: TextSpan(
