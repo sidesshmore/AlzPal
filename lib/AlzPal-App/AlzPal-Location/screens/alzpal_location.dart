@@ -18,7 +18,7 @@ class _AlzpalLocationState extends State<AlzpalLocation> {
     return Scaffold(
       appBar: AppBar(
         foregroundColor: Colors.white,
-        toolbarHeight: screenHeight * 0.031,
+        toolbarHeight: screenHeight * 0.040,
         backgroundColor: const Color(0xff262626),
       ),
       body: Padding(
