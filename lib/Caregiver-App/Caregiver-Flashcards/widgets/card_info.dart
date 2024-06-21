@@ -15,7 +15,6 @@ class CardInfo extends StatelessWidget {
       margin: const EdgeInsets.symmetric(vertical: 5.0),
       padding: const EdgeInsets.all(10.0),
       decoration: BoxDecoration(
-        color: const Color(0xff333333),
         borderRadius: BorderRadius.circular(10.0),
       ),
       child: Column(
@@ -100,7 +99,7 @@ class CardInfo extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: screenHeight * 0.01,
+            height: screenHeight * 0.02,
           ),
           Image.asset(
             'assets/Dashed_Line.png',
