@@ -18,15 +18,7 @@ class _AlzpalLocationState extends State<AlzpalLocation> {
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
     double screenWidth = MediaQuery.of(context).size.width;
-      String latitude = 'waiting...';
-  String longitude = 'waiting...';
-  String altitude = 'waiting...';
-  String accuracy = 'waiting...';
-  String bearing = 'waiting...';
-  String speed = 'waiting...';
-  String time = 'waiting...';
-  bool? serviceRunning = null;
-    late LocationSettings locationSettings;
+    
     return Scaffold(
       appBar: AppBar(
         foregroundColor: Colors.white,
