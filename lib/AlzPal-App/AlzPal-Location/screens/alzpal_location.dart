@@ -1,6 +1,8 @@
 import 'package:alzpal/AlzPal-App/AlzPal-Home/screens/alzpal_home.dart';
 import 'package:alzpal/AlzPal-App/AlzPal-SignUp/screens/otp_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:geolocator/geolocator.dart';
+import 'package:geolocator_android/geolocator_android.dart';
 
 class AlzpalLocation extends StatefulWidget {
   const AlzpalLocation({super.key});
@@ -14,7 +16,7 @@ class _AlzpalLocationState extends State<AlzpalLocation> {
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
     double screenWidth = MediaQuery.of(context).size.width;
-
+    late LocationSettings locationSettings;
     return Scaffold(
       appBar: AppBar(
         foregroundColor: Colors.white,
@@ -62,7 +64,21 @@ class _AlzpalLocationState extends State<AlzpalLocation> {
                   child: Column(
                     children: [
                       TextButton(
-                        onPressed: () {},
+                        onPressed: () async {
+                          LocationPermission permission =
+                              await Geolocator.checkPermission();
+                          if (permission == LocationPermission.denied) {
+                            await Geolocator.requestPermission();
+                          
+                          } else {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => AlzpalHome(),
+                              ),
+                            );
+                          }
+                        },
                         style: TextButton.styleFrom(
                           padding: const EdgeInsets.only(
                               left: 20, right: 20, top: 10, bottom: 10),
