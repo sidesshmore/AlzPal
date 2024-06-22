@@ -1,4 +1,7 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 
 class AlzpalHome extends StatefulWidget {
   const AlzpalHome({super.key});
@@ -8,6 +11,18 @@ class AlzpalHome extends StatefulWidget {
 }
 
 class _AlzpalHomeState extends State<AlzpalHome> {
+  late File _image;
+  final ImagePicker imagepicker = ImagePicker();
+
+  pickimage_camera() async {
+     XFile? image = await imagepicker.pickImage(source: ImageSource.camera);
+    print(image!.path);
+    if (image == null) {
+      return null;
+    } else {
+      _image = File(image.path);
+    }
+  }
   @override
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
@@ -60,14 +75,19 @@ class _AlzpalHomeState extends State<AlzpalHome> {
                     height: screenHeight * 0.1,
                     width: screenWidth * 0.1,
                   ),
-                  Padding(
-                    padding: EdgeInsets.only(left: 10),
-                    child: Text(
-                      'Take Photo',
-                      style: TextStyle(
-                        fontSize: screenWidth * 0.090,
-                        color: Colors.white,
-                        fontWeight: FontWeight.w600,
+                  InkWell(
+                    onTap: (){
+                      pickimage_camera();
+                    },
+                    child: Padding(
+                      padding: EdgeInsets.only(left: 10),
+                      child: Text(
+                        'Take Photo',
+                        style: TextStyle(
+                          fontSize: screenWidth * 0.090,
+                          color: Colors.white,
+                          fontWeight: FontWeight.w600,
+                        ),
                       ),
                     ),
                   ),

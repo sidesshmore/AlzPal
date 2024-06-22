@@ -1,3 +1,4 @@
+import 'package:alzpal/Caregiver-App/BottomNavbar/bottomNavbar.dart';
 import 'package:alzpal/Caregiver-App/Caregiver-Home/screens/caregiver_home.dart';
 import 'package:flutter/material.dart';
 
@@ -147,7 +148,7 @@ class _CaregiverSignUpState extends State<CaregiverSignUp> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => CaregiverHome()),
+                  MaterialPageRoute(builder: (context) => CustomNavigationBar()),
                 );
               },
               style: TextButton.styleFrom(

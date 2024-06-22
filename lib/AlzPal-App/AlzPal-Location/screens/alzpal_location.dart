@@ -1,5 +1,7 @@
 import 'package:alzpal/AlzPal-App/AlzPal-Home/screens/alzpal_home.dart';
 import 'package:alzpal/AlzPal-App/AlzPal-SignUp/screens/otp_screen.dart';
+import 'package:alzpal/AlzPal-App/AlzPalBottomNavigationBat/alzpalBottomNavbar.dart';
+import 'package:background_location/background_location.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:geolocator_android/geolocator_android.dart';
@@ -16,6 +18,14 @@ class _AlzpalLocationState extends State<AlzpalLocation> {
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
     double screenWidth = MediaQuery.of(context).size.width;
+      String latitude = 'waiting...';
+  String longitude = 'waiting...';
+  String altitude = 'waiting...';
+  String accuracy = 'waiting...';
+  String bearing = 'waiting...';
+  String speed = 'waiting...';
+  String time = 'waiting...';
+  bool? serviceRunning = null;
     late LocationSettings locationSettings;
     return Scaffold(
       appBar: AppBar(
@@ -71,10 +81,13 @@ class _AlzpalLocationState extends State<AlzpalLocation> {
                             await Geolocator.requestPermission();
                           
                           } else {
+                            print("hello");
+                      
+
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => AlzpalHome(),
+                                builder: (context) => AlzPalNavigationBar(),
                               ),
                             );
                           }
@@ -96,11 +109,13 @@ class _AlzpalLocationState extends State<AlzpalLocation> {
                         ),
                       ),
                       TextButton(
-                        onPressed: () {
+                        onPressed: () async{
+                          print("hello");
+                          
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => AlzpalHome(),
+                              builder: (context) => AlzPalNavigationBar(),
                             ),
                           );
                         },

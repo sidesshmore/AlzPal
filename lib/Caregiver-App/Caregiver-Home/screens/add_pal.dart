@@ -1,7 +1,9 @@
 import 'dart:developer';
+import 'dart:io';
 
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 
 class AddPal extends StatefulWidget {
@@ -19,6 +21,18 @@ class _AddPalState extends State<AddPal> {
   final _emergencyNumbercontroller = TextEditingController();
   String emergencyContact = '';
   bool _passwordVisible = true;
+  late File _image;
+  final ImagePicker imagepicker = ImagePicker();
+
+   pickimage_gallery() async {
+    XFile ? image = await imagepicker.pickImage(source: ImageSource.gallery);
+    if (image == null) {
+      return null;
+    } else {
+      _image = File(image.path);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
@@ -125,7 +139,9 @@ class _AddPalState extends State<AddPal> {
                 height: screenHeight * 0.014,
               ),
               InkWell(
-                onTap: () {},
+                onTap: () {
+                  pickimage_gallery();
+                },
                 child: DottedBorder(
                     borderType: BorderType.RRect,
                     radius: Radius.circular(20),

@@ -1,9 +1,23 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 
 class CardInfo extends StatelessWidget {
   final int cardNumber;
   final TextEditingController _cardNameController = TextEditingController();
   final TextEditingController _cardDescController = TextEditingController();
+  late File _image;
+  final ImagePicker imagepicker = ImagePicker();
+
+   pickimage_gallery() async {
+    XFile ? image = await imagepicker.pickImage(source: ImageSource.gallery);
+    if (image == null) {
+      return null;
+    } else {
+      _image = File(image.path);
+    }
+  }
 
   CardInfo({super.key, required this.cardNumber});
 
@@ -69,7 +83,9 @@ class CardInfo extends StatelessWidget {
                   ),
                   backgroundColor: const Color(0xff262626),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  pickimage_gallery();
+                },
                 label: Text(
                   'Upload Photo',
                   style: TextStyle(
