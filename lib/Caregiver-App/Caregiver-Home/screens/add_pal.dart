@@ -12,14 +12,13 @@ class AddPal extends StatefulWidget {
 }
 
 class _AddPalState extends State<AddPal> {
-
-    final _namecontroller = TextEditingController();
-    final _addresscontroller = TextEditingController();
-    final _numbercontroller = TextEditingController();
-    final _emergencyNamecontroller = TextEditingController();
-    final  _emergencyNumbercontroller = TextEditingController();
-    String emergencyContact='';
-    bool _passwordVisible = true;
+  final _namecontroller = TextEditingController();
+  final _addresscontroller = TextEditingController();
+  final _numbercontroller = TextEditingController();
+  final _emergencyNamecontroller = TextEditingController();
+  final _emergencyNumbercontroller = TextEditingController();
+  String emergencyContact = '';
+  bool _passwordVisible = true;
   @override
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
@@ -227,9 +226,9 @@ class _AddPalState extends State<AddPal> {
                 child: InternationalPhoneNumberInput(
                   textFieldController: _emergencyNumbercontroller,
                   onInputChanged: (PhoneNumber number) {
-                      setState(() {
-                        emergencyContact=number.phoneNumber.toString();
-                      });
+                    setState(() {
+                      emergencyContact = number.phoneNumber.toString();
+                    });
                   },
                   textStyle: TextStyle(color: Colors.white),
                   selectorTextStyle: TextStyle(color: Colors.white),
@@ -241,7 +240,6 @@ class _AddPalState extends State<AddPal> {
                       hintText: "Phone Number",
                       hintStyle: TextStyle(color: Colors.white)),
                 ),
-
               ),
               SizedBox(
                 height: screenHeight * 0.033,
