@@ -1,4 +1,4 @@
-import 'package:alzpal/Caregiver-App/Caregiver-Flashcards/screen/add_cards.dart';
+import 'package:alzpal/Caregiver-App/Caregiver-Add-Known-People/screen/add_known_people.dart';
 import 'package:flutter/material.dart';
 
 class PalLocCard extends StatefulWidget {

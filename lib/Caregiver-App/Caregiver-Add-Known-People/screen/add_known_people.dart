@@ -1,7 +1,7 @@
 // add_cards.dart
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:alzpal/Caregiver-App/Caregiver-Flashcards/widgets/card_info.dart';
+import 'package:alzpal/Caregiver-App/Caregiver-Add-Known-People/widgets/known_card_info.dart';
 
 class AddCards extends StatefulWidget {
   const AddCards({super.key});
@@ -38,7 +38,7 @@ class _AddCardsState extends State<AddCards> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Add Cards'),
+        title: const Text('Add Known People'),
         backgroundColor: const Color(0xff262626),
         foregroundColor: Colors.white,
       ),
@@ -74,26 +74,6 @@ class _AddCardsState extends State<AddCards> {
               ),
             ),
             SizedBox(height: screenHeight * 0.02),
-            TextField(
-              cursorColor: Colors.white,
-              style: const TextStyle(color: Colors.white),
-              controller: _folderNamecontroller,
-              decoration: InputDecoration(
-                labelStyle: TextStyle(
-                    color: Colors.white, fontSize: screenWidth * 0.04),
-                labelText: "Flashcard's Folder Name",
-                focusedBorder: OutlineInputBorder(
-                  borderSide:
-                      const BorderSide(color: Color(0xff62CA73), width: 2.0),
-                  borderRadius: BorderRadius.circular(10.0),
-                ),
-                fillColor: const Color(0xffA3A3A3),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10),
-                ),
-              ),
-            ),
-            SizedBox(height: screenHeight * 0.02),
             Expanded(
               child: ListView.builder(
                 itemCount: _cards.length,
@@ -103,13 +83,16 @@ class _AddCardsState extends State<AddCards> {
               ),
             ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
+                SizedBox(
+                  width: screenWidth * 0.1,
+                ),
                 TextButton(
                   onPressed: () {},
                   style: TextButton.styleFrom(
-                    padding: EdgeInsets.only(
-                        left: 20, right: 20, top: 10, bottom: 10),
+                    padding: const EdgeInsets.only(
+                        left: 10, right: 10, top: 5, bottom: 5),
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10)),
                     backgroundColor: Color(0xff62CA73),
@@ -117,7 +100,7 @@ class _AddCardsState extends State<AddCards> {
                   child: Text(
                     'Add Folder',
                     style: TextStyle(
-                      fontSize: screenWidth * 0.065,
+                      fontSize: screenWidth * 0.055,
                       fontWeight: FontWeight.w600,
                       color: Colors.white,
                     ),

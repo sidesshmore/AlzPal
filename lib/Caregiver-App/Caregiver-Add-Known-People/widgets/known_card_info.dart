@@ -28,51 +28,62 @@ class CardInfo extends StatelessWidget {
               color: const Color(0xff62CA73),
             ),
           ),
-          TextField(
-            cursorColor: Colors.white,
-            style: const TextStyle(color: Colors.white),
-            controller: _cardNameController,
-            decoration: InputDecoration(
-              labelStyle: TextStyle(
-                color: Colors.white,
-                fontSize: screenWidth * 0.04,
-              ),
-              labelText: "Name",
-              focusedBorder: OutlineInputBorder(
-                borderSide: const BorderSide(
-                  color: Color(0xff62CA73),
-                  width: 2.0,
-                ),
-                borderRadius: BorderRadius.circular(10.0),
-              ),
-              fillColor: const Color(0xffA3A3A3),
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(10),
-              ),
-            ),
-          ),
           SizedBox(height: screenHeight * 0.01),
-          ElevatedButton.icon(
-            style: ElevatedButton.styleFrom(
-              padding: const EdgeInsetsDirectional.all(10),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10),
+          Row(
+            children: [
+              // Name text field
+              Expanded(
+                child: TextField(
+                  cursorColor: Colors.white,
+                  style: const TextStyle(color: Colors.white),
+                  controller: _cardNameController,
+                  decoration: InputDecoration(
+                    labelStyle: TextStyle(
+                      color: Colors.white,
+                      fontSize: screenWidth * 0.04,
+                    ),
+                    labelText: "Name",
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: const BorderSide(
+                        color: Color(0xff62CA73),
+                        width: 2.0,
+                      ),
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                  ),
+                ),
               ),
-              backgroundColor: const Color(0xffA3A3A3),
-            ),
-            onPressed: () {},
-            label: Text(
-              'Upload Photo',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: screenWidth * 0.05,
+              SizedBox(width: screenWidth * 0.03),
+              ElevatedButton.icon(
+                style: ElevatedButton.styleFrom(
+                  padding: const EdgeInsets.all(10),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                    side: const BorderSide(
+                      color: Color(0xff62CA73),
+                      width: 1.0,
+                    ),
+                  ),
+                  backgroundColor: const Color(0xff262626),
+                ),
+                onPressed: () {},
+                label: Text(
+                  'Upload Photo',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: screenWidth * 0.04,
+                  ),
+                ),
+                icon: Icon(
+                  Icons.upload,
+                  size: screenWidth * 0.04,
+                  color: Colors.white,
+                ),
               ),
-            ),
-            icon: Icon(
-              Icons.upload,
-              size: screenWidth * 0.05,
-              color: Colors.white,
-            ),
+            ],
           ),
           SizedBox(height: screenHeight * 0.01),
           TextField(
@@ -92,15 +103,12 @@ class CardInfo extends StatelessWidget {
                 ),
                 borderRadius: BorderRadius.circular(10.0),
               ),
-              fillColor: const Color(0xffA3A3A3),
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10),
               ),
             ),
           ),
-          SizedBox(
-            height: screenHeight * 0.02,
-          ),
+          SizedBox(height: screenHeight * 0.02),
           Image.asset(
             'assets/Dashed_Line.png',
             width: screenWidth * 0.91,
